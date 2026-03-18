@@ -281,14 +281,7 @@
 
       <div class="controls">
         <label class="select-wrap">
-          <select id="diceCount" aria-label="Select number of dice">
-            <option>1 DICE</option>
-            <option>2 DICE</option>
-            <option>3 DICE</option>
-            <option selected>4 DICE</option>
-            <option>5 DICE</option>
-            <option>6 DICE</option>
-          </select>
+          <select id="diceCount" aria-label="Select number of dice"></select>
         </label>
 
         <label class="select-wrap">
@@ -567,6 +560,13 @@
 
 const diceHost  = document.getElementById('diceRow');
 const diceCount = document.getElementById('diceCount');
+for (let i = 1; i <= 100; i++) {
+  const opt = document.createElement("option");
+  opt.value = i;
+  opt.textContent = i + " DICE";
+  if (i === 4) opt.selected = true;
+  diceCount.appendChild(opt);
+}
 const rollBtn   = document.getElementById('rollBtn');
 
 const COLORS = [
